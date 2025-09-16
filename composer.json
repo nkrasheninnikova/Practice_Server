@@ -1,0 +1,22 @@
+{
+    "name": "nk110905/pop-it-mvc",
+    "description": "simple mvc freamework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Natasha Krasheninnikova",
+            "email": "nk110905@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "core/Src/",
+            "": "app/"
+        }
+    }
+}
