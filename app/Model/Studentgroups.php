@@ -4,7 +4,7 @@ namespace Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Studentgroups extends Model
 {
     protected $table = 'studentsgroups';
     protected $primaryKey = 'group_id';
