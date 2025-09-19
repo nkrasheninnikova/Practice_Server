@@ -4,7 +4,12 @@ namespace Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Students extends Model
+class Disciplines extends Model
 {
-
+    protected $table = 'disciplines';
+    protected $primaryKey = 'disciplines_id';
+    public $timestamps = false;
+    protected $fillable = [
+        'discipline_name'
+    ];
 }
