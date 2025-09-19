@@ -2,5 +2,16 @@
 
 namespace Model;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
+class Studentsgroups extends Model
+{
+    protected $table = 'studentsgroups';
+    protected $primaryKey = 'group_id';
+    public $timestamps = false;
+    protected $fillable = [
+        'group_name',
+        'course_number',
+        'semester'
+    ];
+}
