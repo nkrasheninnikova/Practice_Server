@@ -60,4 +60,13 @@ class Site
         return new View('site.student', ['message' => 'аааа']);
     }
 
+    public function academicperformance (Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method === 'GET') {
+            return new View('site.academicperformance');
+        }
+        //Если аутентификация не удалась, то сообщение об ошибке
+        return new View('site.academicperformance', ['message' => 'аааа']);
+    }
 }
