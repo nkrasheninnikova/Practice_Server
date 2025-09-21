@@ -11,5 +11,6 @@ Route::add('GET', '/logout', [Controller\Site::class, 'logout']);
 Route::add('GET', '/student', [Controller\Site::class, 'student']);
 Route::add('GET', '/academicPerformance', [Controller\Site::class, 'academicPerformance']);
 Route::add('GET', '/group', [Controller\Site::class, 'group']);
+Route::add('GET', '/discipline', [Controller\Site::class, 'discipline']);
 
 
