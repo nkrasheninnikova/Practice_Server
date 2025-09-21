@@ -50,5 +50,14 @@ class Site
         app()->route->redirect('/hello');
     }
 
+    public function student (Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method === 'GET') {
+            return new View('site.student');
+        }
+        //Если аутентификация не удалась, то сообщение об ошибке
+        return new View('site.student', ['message' => 'аааа']);
+    }
 
 }

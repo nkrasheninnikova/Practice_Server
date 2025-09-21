@@ -1,0 +1,451 @@
+@import url(../fonts/style.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #CEEBF6;
+}
+.wrapper{
+    overflow: hidden;
+}
+
+/*Главная страница*/
+.header{
+    width: 1920px;
+    height: 140px;
+    background-color: #F5F5F5;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.logo-menu{
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: 400px;
+    height: 100%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Inter-Regular';
+    font-size: 32px;
+}
+.account{
+    width: 260px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter-Regular';
+    font-size: 20px;
+}
+
+/*Первая секция*/
+.main-deans{
+    margin-top: 150px;
+}
+.deans{
+    width: 1660px;
+    height: 510px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.deans-block-one{
+    width: 400px;
+    height: 510px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.deans-block{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter-Regular';
+    font-size: 32px;
+}
+.deans-block-img{
+    width: 100%;
+    height: 400px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deans-block-two{
+    width: 1100px;
+    height: 400px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+}
+.deans-block-two-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter-Regular';
+    font-size: 32px;
+}
+
+
+.main-deans-tasks{
+    margin-top: 100px;
+}
+.tasks-block{
+    width: 1660px;
+    height: 410px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.tasks-block-header{
+    width: 565px;
+    height: 40px;
+    margin: 0 auto;
+    font-family: 'Lobster-Regular';
+    font-size: 32px;
+}
+.tasks-block-list{
+    width: 1660px;
+    height: 320px;
+    font-family: 'Inter-Regular';
+    font-size: 24px;
+    line-height: 40px;
+}
+
+
+.main-deans-information{
+    margin-top: 150px;
+}
+.information-block{
+    width: 1520px;
+    height: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.information-block-one{
+    width: 700px;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.information-block-one-header{
+    width: 380px;
+    height: 80px;
+    text-align: center;
+    font-family: 'Inter-Regular';
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 auto;
+}
+.information-block-one-main{
+    width: 700px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.information-block-one-icons{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    font-family: 'Inter-Regular';
+    font-size: 32px;
+}
+.information-block-one-text{
+    width: 700px;
+    height: 150px;
+    font-family: 'Inter-Regular';
+    font-size: 32px;
+    line-height: 50px;
+}
+
+.information-block-two{
+    width: 540px;
+    height: 700px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main-deans-specialization{
+    margin-top: 150px;
+}
+.specialization-block{
+    width: 1615px;
+    height: 685px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.specialization-block-header{
+    font-family: 'Lobster-Regular';
+    font-size: 32px;
+}
+.specialization-block-list{
+    width: 1555px;
+    height: 580px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.specialization-block-one{
+    width: 100%;
+    height: 240px;
+    display: flex;
+    justify-content: space-between;
+}
+.specialization-block-one-main{
+    width: 711px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-family: 'Inter-Regular';
+    font-size: 24px;
+    line-height: 40px;
+}
+.specialization-block-one-img{
+    width: 260px;
+    height: 240px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Футер*/
+.footer-section{
+    margin-top: 150px;
+}
+.footer-block{
+    width: 1920px;
+    height: 370px;
+    background-color: #F5F5F5;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-block-menu{
+    width: 1420px;
+    height: 155px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-block-menu-text{
+    width: 130px;
+    height: 155px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family:'Inter-Regular';
+    font-size: 20px;
+}
+.footer-block-menu-logo{
+    width: 400px;
+    height: 140px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Inter-Regular';
+    font-size: 32px;
+}
+.footer-block-menu-icons{
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header{
+    width: 1920px;
+    height: 140px;
+    background-color: #F5F5F5;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.logo{
+    width: 400px;
+    height: 100%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Inter-Regular';
+    font-size: 32px;
+}
+/*Лого блок*/
+.authorization-logo-block{
+    margin-top: 100px;
+    width: 100%;
+}
+.authorization-logo-center{
+    width: 545px;
+    height: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.authorization-logo{
+    width: 100%;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-family:'Lobster-Regular';
+    font-size: 36px;
+}
+.authorization-logo-color{
+    width: 100%;
+    height: 300px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.authorization-logo-text{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-family:'Inter-Regular';
+    font-size: 24px;
+}
+
+/*Форма авторизации*/
+.authorization-form-block{
+    margin-top: 50px;
+    width: 100%;
+    height: 680px;
+}
+.authorization-form-center{
+    width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.authorization-form-block-text{
+    width: 910px;
+    height: 506px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.authorization-form-header{
+    width: 695px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-family:'Lobster-Regular';
+    font-size: 40px;
+}
+.authorization-form{
+    width: 820px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.authorization-form-login{
+    width: 100%;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.authorization-form-login p{
+    font-family:'Inter-Regular';
+    font-size: 24px;
+}
+.authorization-form-login input{
+    width: 100%;
+    height: 80px;
+    background-color: #FFEBCD;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+.authorization-form-login input::placeholder{
+    padding-left: 20px;
+    font-family:'Inter-Regular';
+    font-size: 20px;
+    color: #7B7B7B;
+}
+
+.authorization-form-password{
+    width: 100%;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.authorization-form-password p{
+    font-family:'Inter-Regular';
+    font-size: 24px;
+}
+.authorization-form-password input{
+    width: 100%;
+    height: 80px;
+    background-color: #FFEBCD;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+.authorization-form-password input::placeholder{
+    padding-left: 20px;
+    font-family:'Inter-Regular';
+    font-size: 20px;
+    color: #7B7B7B;
+}
+.authorization-form-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.authorization-form-button input{
+    width: 260px;
+    height: 50px;
+    background-color: #FFEBCD;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-family:'Inter-Regular';
+    font-size: 20px;
+}
