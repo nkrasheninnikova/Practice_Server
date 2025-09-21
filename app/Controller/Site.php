@@ -69,4 +69,13 @@ class Site
         //Если аутентификация не удалась, то сообщение об ошибке
         return new View('site.academicperformance', ['message' => 'аааа']);
     }
+    public function group (Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method === 'GET') {
+            return new View('site.group');
+        }
+        //Если аутентификация не удалась, то сообщение об ошибке
+        return new View('site.group', ['message' => 'аааа']);
+    }
 }

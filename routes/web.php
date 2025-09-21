@@ -9,6 +9,7 @@ Route::add(['GET', 'POST'], '/login', [Controller\Site::class, 'login']);
 Route::add('GET', '/logout', [Controller\Site::class, 'logout']);
 
 Route::add('GET', '/student', [Controller\Site::class, 'student']);
-Route::add('GET', '/academicperformance', [Controller\Site::class, 'academicperformance']);
+Route::add('GET', '/academicPerformance', [Controller\Site::class, 'academicPerformance']);
+Route::add('GET', '/group', [Controller\Site::class, 'group']);
 
 
