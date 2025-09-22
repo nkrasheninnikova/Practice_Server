@@ -143,4 +143,18 @@ class Site
         // На всякий случай — если ни GET, ни POST
         return new View('site.academicPerformance_add');
     }
+    public function staff_add(Request $request): string
+    {
+        // Если GET — просто показываем форму
+        if ($request->method === 'GET') {
+            return new View('site.staff_add');
+        }
+
+        // Если POST — обрабатываем данные
+        if ($request->method === 'POST') {
+            return new View('site.staff_add');
+        }
+        // На всякий случай — если ни GET, ни POST
+        return new View('site.staff_add');
+    }
 }
