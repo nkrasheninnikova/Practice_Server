@@ -129,4 +129,18 @@ class Site
         // На всякий случай — если ни GET, ни POST
         return new View('site.discipline_add');
     }
+    public function academicPerformance_add(Request $request): string
+    {
+        // Если GET — просто показываем форму
+        if ($request->method === 'GET') {
+            return new View('site.academicPerformance_add');
+        }
+
+        // Если POST — обрабатываем данные
+        if ($request->method === 'POST') {
+            return new View('site.academicPerformance_add');
+        }
+        // На всякий случай — если ни GET, ни POST
+        return new View('site.academicPerformance_add');
+    }
 }
