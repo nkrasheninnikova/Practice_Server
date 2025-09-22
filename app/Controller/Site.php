@@ -60,7 +60,7 @@ class Site
         return new View('site.student', ['message' => 'аааа']);
     }
 
-    public function academicperformance (Request $request): string
+    public function academicPerformance (Request $request): string
     {
         //Если просто обращение к странице, то отобразить форму
         if ($request->method === 'GET') {
@@ -86,5 +86,19 @@ class Site
         }
         //Если аутентификация не удалась, то сообщение об ошибке
         return new View('site.discipline', ['message' => 'аааа']);
+    }
+    public function student_add(Request $request): string
+    {
+        // Если GET — просто показываем форму
+        if ($request->method === 'GET') {
+            return new View('site.student_add');
+        }
+
+        // Если POST — обрабатываем данные
+        if ($request->method === 'POST') {
+            return new View('site.student_add');
+        }
+        // На всякий случай — если ни GET, ни POST
+        return new View('site.add_student');
     }
 }
