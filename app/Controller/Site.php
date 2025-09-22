@@ -115,4 +115,18 @@ class Site
         // На всякий случай — если ни GET, ни POST
         return new View('site.group_add');
     }
+    public function discipline_add(Request $request): string
+    {
+        // Если GET — просто показываем форму
+        if ($request->method === 'GET') {
+            return new View('site.discipline_add');
+        }
+
+        // Если POST — обрабатываем данные
+        if ($request->method === 'POST') {
+            return new View('site.discipline_add');
+        }
+        // На всякий случай — если ни GET, ни POST
+        return new View('site.discipline_add');
+    }
 }
