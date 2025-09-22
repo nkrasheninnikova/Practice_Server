@@ -99,6 +99,20 @@ class Site
             return new View('site.student_add');
         }
         // На всякий случай — если ни GET, ни POST
-        return new View('site.add_student');
+        return new View('site.student_add');
+    }
+    public function group_add(Request $request): string
+    {
+        // Если GET — просто показываем форму
+        if ($request->method === 'GET') {
+            return new View('site.group_add');
+        }
+
+        // Если POST — обрабатываем данные
+        if ($request->method === 'POST') {
+            return new View('site.group_add');
+        }
+        // На всякий случай — если ни GET, ни POST
+        return new View('site.group_add');
     }
 }
