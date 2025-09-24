@@ -18,7 +18,7 @@
             <div class="adding-group-form-center">
                 <div class="adding-group-form-text">
                     <div class="adding-group-form-header">
-                        <p>&larr;</p>
+                        <a href="group.php">&larr;</a>
                         <p>Добавление группы</p>
                     </div>
 

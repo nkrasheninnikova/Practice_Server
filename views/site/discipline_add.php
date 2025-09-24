@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Добавление дисциплины</title>
@@ -18,7 +18,7 @@
             <div class="adding-discipline-form-center">
                 <div class="adding-discipline-form-text">
                     <div class="adding-discipline-form-header">
-                        <p>&larr;</p>
+                        <a href="discipline.php">&larr;</a>
                         <p>Добавление дисциплины</p>
                     </div>
                     <form class="adding-discipline-form" method="post">

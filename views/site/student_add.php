@@ -19,7 +19,7 @@
             <div class="adding-student-form-center">
                 <div class="adding-student-form-text">
                     <div class="adding-student-form-header">
-                        <p>&larr;</p>
+                        <a href="student.php">&larr;</a>
                         <p>Добавление студента</p>
                     </div>
 

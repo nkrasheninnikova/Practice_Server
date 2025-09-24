@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Добавление фиксации успеваемости</title>
@@ -18,7 +18,7 @@
             <div class="adding-of-academic-performance-center">
                 <div class="adding-of-academic-performance-text">
                     <div class="adding-of-academic-performance-header">
-                        <p>&larr;</p>
+                        <a href="academicperformance.php">&larr;</a>
                         <p>Фиксация успеваемости</p>
                     </div>
 
