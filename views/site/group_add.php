@@ -1,17 +1,70 @@
-<h2>Добавление группы</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление группы</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="header">
+            <div class="logo">Logo</div>
+        </div>
+    </header>
 
-<form method="POST" action="">
-    <label>
-        Номер группы
-        <input type="number" name="group_number" required>
-    </label>
-    <label>
-        Специальность
-        <input type="text" name="specialization" required>
-    </label>
-    <label>
-        Год поступления
-        <input type="number" name="year_of_admission" required>
-    </label>
-    <button type="submit">Добавить</button>
-</form>
+    <main>
+        <section class="adding-group-form-block">
+            <div class="adding-group-form-center">
+                <div class="adding-group-form-text">
+                    <div class="adding-group-form-header">
+                        <p>&larr;</p>
+                        <p>Добавление группы</p>
+                    </div>
+
+                    <form class="adding-group-form" method="post">
+                        <div class="adding-group-form-element">
+                            <label>
+                                <input type="text" name="group number" placeholder="|Номер группы">
+                            </label>
+                        </div>
+                        <div class="adding-group-form-element">
+                            <label>
+                                <input type="text" name="specialization" placeholder="|Специальность">
+                            </label>
+                        </div>
+                        <div class="adding-group-form-element">
+                            <label>
+                                <input type="text" name="year of admission" placeholder="|Год поступления">
+                            </label>
+                        </div>
+                        <div class="adding-group-form-element-button">
+                            <button type="submit">Добавить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-block">
+            <div class="footer-block-menu">
+                <div class="footer-block-menu-text">
+                    <p>Информация</p>
+                    <p>Информация</p>
+                    <p>Информация</p>
+                </div>
+                <div class="footer-block-menu-logo">Logo</div>
+                <div class="footer-block-menu-icons">
+                    <img src="img/icons-vk.png" alt="icons-vk">
+                    <img src="img/icons-telegram.png" alt="icons-telegram">
+                    <img src="img/icons-mail.png" alt="icons-mail">
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
+
