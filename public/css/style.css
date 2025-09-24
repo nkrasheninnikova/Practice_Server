@@ -741,3 +741,75 @@ body{
     font-family:'Inter-Regular';
     font-size: 20px;
 }
+
+/*Добавление фиксации успеваемости*/
+.adding-of-academic-perfomance{
+    margin-top: 150px;
+}
+.adding-of-academic-performance-center{
+    width: 1100px;
+    height: 925px;
+    margin: 0 auto;
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.adding-of-academic-performance-text{
+    width: 910px;
+    height: 745px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+.adding-of-academic-performance-header{
+    width: 710px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-family:'Lobster-Regular';
+    font-size: 40px;
+}
+
+.adding-of-academic-performance-form{
+    width: 820px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.adding-of-academic-perfomance-element{
+    width: 820px;
+    height: 80px;
+}
+.adding-of-academic-perfomance-element input{
+    width: 100%;
+    height: 80px;
+    background-color: #FFEBCD;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+.adding-of-academic-perfomance-element input::placeholder{
+    padding-left: 20px;
+    font-family:'Inter-Regular';
+    font-size: 20px;
+    color: #7B7B7B;
+}
+.adding-of-academic-perfomance-element-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.adding-of-academic-perfomance-element-button button{
+    width: 260px;
+    height: 50px;
+    background-color: #FFEBCD;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-family:'Inter-Regular';
+    font-size: 20px;
+}
