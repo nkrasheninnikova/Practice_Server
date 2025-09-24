@@ -1,11 +1,3 @@
-<h2>Регистрация нового пользователя</h2>
-<h3><?= $message ?? ''; ?></h3>
-<form method="post">
-    <label>Имя <input type="text" name="name"></label>
-    <label>Логин <input type="text" name="login"></label>
-    <label>Пароль <input type="password" name="password"></label>
-    <button>Зарегистрироваться</button>
-</form>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -42,21 +34,19 @@
             <div class="authorization-form-center">
                 <div class="authorization-form-block-text">
                     <div class="authorization-form-header">
-                        <p>&larr;</p>
+                        <a href="index.php">&larr;</a>
                         <p>Вход в личный кабинет</p>
                     </div>
 
-                    <form class="authorization-form">
+                    <form class="authorization-form" method="post">
                         <div class="authorization-form-login">
-                            <p>Логин</p>
-                            <input type="text" name="login" placeholder="|Введите ваш логин">
+                            <label><p>Логин</p> <input type="text" name="login" placeholder="|Введите ваш логин"></label>
                         </div>
                         <div class="authorization-form-password">
-                            <p>Пароль</p>
-                            <input type="text" name="password"  placeholder="|Введите ваш пароль" >
+                            <label><p>Пароль</p> <input type="text" name="password"  placeholder="|Введите ваш пароль" ></label>
                         </div>
                         <div class="authorization-form-button">
-                            <input type="submit">
+                            <button>Зарегистрироваться</button>
                         </div>
                     </form>
                 </div>
