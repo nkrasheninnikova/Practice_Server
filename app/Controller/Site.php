@@ -11,6 +11,7 @@ use Src\Request;
 use Model\User;
 use Src\Auth\Auth;
 use Model\Disciplines;
+use Model\Academicperformance;
 
 class Site
 {
@@ -70,11 +71,14 @@ class Site
     public function academicPerformance (Request $request): string
     {
         //Если просто обращение к странице, то отобразить форму
-        if ($request->method === 'GET') {
+        if ($request->method !== 'GET') {
             return new View('site.academicPerformance');
         }
-        //Если аутентификация не удалась, то сообщение об ошибке
-        return new View('site.academicPerformance', ['message' => 'аааа']);
+        $academicPerformances = academicPerformance::all();
+
+            return (new View())->render('site.academicPerformance', [
+                'academicPerformances' => $academicPerformances
+            ]);
     }
     public function group (Request $request): string
     {
@@ -144,17 +148,19 @@ class Site
     }
     public function academicPerformance_add(Request $request): string
     {
-        // Если GET — просто показываем форму
-        if ($request->method === 'GET') {
-            return new View('site.academicPerformance_add');
+        if ($request->method === 'POST') {
+            $data = $request->all();
+
+            // Сохраняем в БД
+            \Model\AcademicPerformance::create($data);
+
+            // Редиректим на список
+            app()->route->redirect('/academicPerformance');
+            exit;
         }
 
-        // Если POST — обрабатываем данные
-        if ($request->method === 'POST') {
-            return new View('site.academicPerformance_add');
-        }
-        // На всякий случай — если ни GET, ни POST
-        return new View('site.academicPerformance_add');
+        // При GET — показываем форму
+        return (new View())->render('site.academicPerformance_add');
     }
     public function staff_add(Request $request): string
     {
