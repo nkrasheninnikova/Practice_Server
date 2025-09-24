@@ -669,3 +669,75 @@ body{
     font-family:'Inter-Regular';
     font-size: 20px;
 }
+
+/*Добавление группы*/
+.adding-discipline-form-block{
+    margin-top: 150px;
+}
+.adding-discipline-form-center{
+    width: 1100px;
+    height: 810px;
+    margin: 0 auto;
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.adding-discipline-form-text{
+    width: 910px;
+    height: 635px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+.adding-discipline-form-header{
+    width: 705px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-family:'Lobster-Regular';
+    font-size: 40px;
+}
+
+.adding-discipline-form{
+    width: 820px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.adding-discipline-form-element{
+    width: 820px;
+    height: 80px;
+}
+.adding-discipline-form-element input{
+    width: 100%;
+    height: 80px;
+    background-color: #FFEBCD;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+.adding-discipline-form-element input::placeholder{
+    padding-left: 20px;
+    font-family:'Inter-Regular';
+    font-size: 20px;
+    color: #7B7B7B;
+}
+.adding-discipline-form-element-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.adding-discipline-form-element-button button{
+    width: 260px;
+    height: 50px;
+    background-color: #FFEBCD;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-family:'Inter-Regular';
+    font-size: 20px;
+}
