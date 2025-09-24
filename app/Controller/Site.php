@@ -10,6 +10,7 @@ use Src\View;
 use Src\Request;
 use Model\User;
 use Src\Auth\Auth;
+use Model\Disciplines;
 
 class Site
 {
@@ -92,11 +93,13 @@ class Site
     public function discipline (Request $request): string
     {
         //Если просто обращение к странице, то отобразить форму
-        if ($request->method === 'GET') {
+        if ($request->method !== 'GET') {
             return new View('site.discipline');
         }
-        //Если аутентификация не удалась, то сообщение об ошибке
-        return new View('site.discipline', ['message' => 'аааа']);
+            // Загружаем все дисциплины из БД
+            $disciplines = Disciplines::all();
+
+        return (new View())->render('site.discipline', ['disciplines' => $disciplines]);
     }
     public function student_add(Request $request): string
     {
@@ -125,17 +128,19 @@ class Site
     }
     public function discipline_add(Request $request): string
     {
-        // Если GET — просто показываем форму
-        if ($request->method === 'GET') {
-            return new View('site.discipline_add');
+        if ($request->method === 'POST') {
+            $data = $request->all();
+
+            // Сохраняем новую дисциплину в БД
+            \Model\Disciplines::create($data);
+
+            // Редиректим на список дисциплин
+            app()->route->redirect('/discipline');
+            exit;
         }
 
-        // Если POST — обрабатываем данные
-        if ($request->method === 'POST') {
-            return new View('site.discipline_add');
-        }
-        // На всякий случай — если ни GET, ни POST
-        return new View('site.discipline_add');
+        // При GET — показываем форму добавления
+        return (new View())->render('site.discipline_add');
     }
     public function academicPerformance_add(Request $request): string
     {
