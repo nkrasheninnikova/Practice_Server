@@ -41,6 +41,11 @@
                         </div>
                         <div class="adding-student-form-element">
                             <label>
+                                <input type="text" name="gender" placeholder="|Пол">
+                            </label>
+                        </div>
+                        <div class="adding-student-form-element">
+                            <label>
                                 <input type="text" name="group number" placeholder="|Номер группы">
                             </label>
                         </div>

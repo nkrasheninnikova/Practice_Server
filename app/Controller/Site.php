@@ -2,7 +2,9 @@
 
 namespace Controller;
 
+use Illuminate\Database\Eloquent\Model;
 use Model\Post;
+use Model\Students;
 use Src\View;
 use Src\Request;
 use Model\User;
@@ -50,14 +52,17 @@ class Site
         app()->route->redirect('/hello');
     }
 
-    public function student (Request $request): string
+    public function student(Request $request): string
     {
-        //Если просто обращение к странице, то отобразить форму
-        if ($request->method === 'GET') {
+        if ($request->method !== 'GET') {
             return new View('site.student');
         }
-        //Если аутентификация не удалась, то сообщение об ошибке
-        return new View('site.student', ['message' => 'аааа']);
+
+        $students = Students::all();
+
+        return (new View())->render('site.student', [
+            'students' => $students
+        ]);
     }
 
     public function academicPerformance (Request $request): string
@@ -89,17 +94,15 @@ class Site
     }
     public function student_add(Request $request): string
     {
-        // Если GET — просто показываем форму
-        if ($request->method === 'GET') {
-            return new View('site.student_add');
+        if ($request->method === 'POST') {
+            $data = $request->all();
+            \Model\Students::create($data);
+
+            app()->route->redirect('/student');
+            exit;
         }
 
-        // Если POST — обрабатываем данные
-        if ($request->method === 'POST') {
-            return new View('site.student_add');
-        }
-        // На всякий случай — если ни GET, ни POST
-        return new View('site.student_add');
+        return (new View())->render('site.student_add');
     }
     public function group_add(Request $request): string
     {

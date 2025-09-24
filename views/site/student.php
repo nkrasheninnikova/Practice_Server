@@ -17,13 +17,13 @@
     <tbody>
     <?php foreach ($students as $student): ?>
         <tr>
-            <td><?= $student->student_id ?></td>
-            <td><?= $student->lastname ?></td>
-            <td><?= $student->firstname ?></td>
-            <td><?= $student->patronymic ?></td>
-            <td><?= $student->gender ?></td>
-            <td><?= $student->birth_date ?></td>
-            <td><?= $student->registration_address ?></td>
+            <td><?= htmlspecialchars($student->student_id ?? '') ?></td>
+            <td><?= htmlspecialchars($student->lastname ?? '') ?></td>
+            <td><?= htmlspecialchars($student->firstname ?? '') ?></td>
+            <td><?= htmlspecialchars($student->patronymic ?? '') ?></td>
+            <td><?= htmlspecialchars($student->gender ?? '') ?></td>
+            <td><?= htmlspecialchars($student->birth_date ?? '') ?></td>
+            <td><?= htmlspecialchars($student->registration_address ?? '') ?></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
