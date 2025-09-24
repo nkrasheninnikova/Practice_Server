@@ -1,29 +1,85 @@
-<h2>Добавление сотрудника</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление сотрудника</title>
+    <link rel="stylesheet" href="css/style3.css">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="header">
+            <div class="logo">Logo</div>
+        </div>
+    </header>
 
-<form method="POST" action="">
-    <label>
-        Фамилия
-        <input type="text" name="lastname" required>
-    </label>
-    <label>
-        Имя
-        <input type="text" name="firstname" required>
-    </label>
-    <label>
-        Отчество
-        <input type="text" name="patronymic" required>
-    </label>
-    <label>
-        Дата рождения
-        <input type="date" name="birth_date" required>
-    </label>
-    <label>
-        Роль сотрудника
-        <input type="text" name="role_staff" required>
-    </label>
-    <label>
-        Адресс прописки
-        <input type="text" name="registration_address" required>
-    </label>
-    <button type="submit">Добавить</button>
-</form>
+    <main>
+        <section class="adding-form-block">
+            <div class="adding-form-center">
+                <div class="adding-form-block-text">
+                    <div class="adding-form-header">
+                        <p>&larr;</p>
+                        <p>Добавление сотрудника</p>
+                    </div>
+
+                    <form class="adding-form" method="post">
+                        <div class="adding-form-element">
+                            <label>
+                                <input type="text" name="surname" placeholder="|Фамилия">
+                            </label>
+                        </div>
+                        <div class="adding-form-element">
+                            <label>
+                                <input type="text" name="name" placeholder="|Имя">
+                            </label>
+                        </div>
+                        <div class="adding-form-element">
+                            <label>
+                                <input type="text" name="patronymic" placeholder="|Отчество">
+                            </label>
+                        </div>
+                        <div class="adding-form-element">
+                            <label>
+                                <input type="text" name="date of birth" placeholder="|Дата рожджения">
+                            </label>
+                        </div>
+                        <div class="adding-form-element">
+                            <label>
+                                <input type="text" name="employee's role" placeholder="|Роль сотрудника">
+                            </label>
+                        </div>
+                        <div class="adding-form-element">
+                            <label>
+                                <input type="text" name="registration address" placeholder="|Адресс прописки">
+                            </label>
+                        </div>
+                        <div class="adding-form-element-button">
+                            <button type="submit">Добавить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-block">
+            <div class="footer-block-menu">
+                <div class="footer-block-menu-text">
+                    <p>Информация</p>
+                    <p>Информация</p>
+                    <p>Информация</p>
+                </div>
+                <div class="footer-block-menu-logo">Logo</div>
+                <div class="footer-block-menu-icons">
+                    <img src="img/icons-vk.png" alt="icons-vk">
+                    <img src="img/icons-telegram.png" alt="icons-telegram">
+                    <img src="img/icons-mail.png" alt="icons-mail">
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
+
