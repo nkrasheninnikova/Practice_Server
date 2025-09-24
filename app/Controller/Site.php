@@ -5,6 +5,7 @@ namespace Controller;
 use Illuminate\Database\Eloquent\Model;
 use Model\Post;
 use Model\Students;
+use Model\Group;
 use Src\View;
 use Src\Request;
 use Model\User;
@@ -69,19 +70,24 @@ class Site
     {
         //Если просто обращение к странице, то отобразить форму
         if ($request->method === 'GET') {
-            return new View('site.academicperformance');
+            return new View('site.academicPerformance');
         }
         //Если аутентификация не удалась, то сообщение об ошибке
-        return new View('site.academicperformance', ['message' => 'аааа']);
+        return new View('site.academicPerformance', ['message' => 'аааа']);
     }
     public function group (Request $request): string
     {
         //Если просто обращение к странице, то отобразить форму
-        if ($request->method === 'GET') {
+        if ($request->method !== 'GET') {
             return new View('site.group');
         }
-        //Если аутентификация не удалась, то сообщение об ошибке
-        return new View('site.group', ['message' => 'аааа']);
+        // Загружаем все группы
+        $groups = Group::all();
+
+        // Передаём в шаблон как одну переменную
+        return (new View())->render('site.group', [
+            'groups' => $groups
+        ]);
     }
     public function discipline (Request $request): string
     {
@@ -106,17 +112,16 @@ class Site
     }
     public function group_add(Request $request): string
     {
-        // Если GET — просто показываем форму
-        if ($request->method === 'GET') {
-            return new View('site.group_add');
-        }
-
-        // Если POST — обрабатываем данные
         if ($request->method === 'POST') {
-            return new View('site.group_add');
+            $data = $request->all();
+            // Просто сохраняем в БД
+            \Model\Group::create($data);
+
+            // Редиректим на список групп
+            app()->route->redirect('/group');
+            exit;
         }
-        // На всякий случай — если ни GET, ни POST
-        return new View('site.group_add');
+        return (new View())->render('site.group_add');
     }
     public function discipline_add(Request $request): string
     {
