@@ -4,6 +4,7 @@ namespace Controller;
 
 use Illuminate\Database\Eloquent\Model;
 use Model\Post;
+use Model\Staff;
 use Model\Students;
 use Model\Group;
 use Src\View;
@@ -12,6 +13,7 @@ use Model\User;
 use Src\Auth\Auth;
 use Model\Disciplines;
 use Model\Academicperformance;
+
 
 class Site
 {
@@ -105,6 +107,17 @@ class Site
 
         return (new View())->render('site.discipline', ['disciplines' => $disciplines]);
     }
+    public function staff (Request $request): string
+    {
+        //Если просто обращение к странице, то отобразить форму
+        if ($request->method !== 'GET') {
+            return new View('site.staff');
+        }
+        // Загружаем все дисциплины из БД
+        $staffs = Staff::all();
+
+        return (new View())->render('site.staff', ['staffs' => $staffs]);
+    }
     public function student_add(Request $request): string
     {
         if ($request->method === 'POST') {
@@ -186,16 +199,21 @@ class Site
     }
     public function staff_add(Request $request): string
     {
-        // Если GET — просто показываем форму
-        if ($request->method === 'GET') {
-            return new View('site.staff_add');
-        }
-
-        // Если POST — обрабатываем данные
         if ($request->method === 'POST') {
-            return new View('site.staff_add');
+            $data = $request->all();
+
+            // Сохраняем новую дисциплину в БД
+            \Model\Staff::create($data);
+
+            // Редиректим на список дисциплин
+            app()->route->redirect('/staff');
+            exit;
         }
         // На всякий случай — если ни GET, ни POST
         return new View('site.staff_add');
+    }
+    public function staff_edit(): string
+    {
+        return new View('site.staff_edit', ['message' => 'hello working']);
     }
 }

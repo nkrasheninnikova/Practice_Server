@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Добавление сотрудника</title>
-    <link rel="stylesheet" href="css/style3.css">
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
 <div class="wrapper">
@@ -25,12 +25,12 @@
                     <form class="adding-form" method="post">
                         <div class="adding-form-element">
                             <label>
-                                <input type="text" name="surname" placeholder="|Фамилия">
+                                <input type="text" name="lastname" placeholder="|Фамилия">
                             </label>
                         </div>
                         <div class="adding-form-element">
                             <label>
-                                <input type="text" name="name" placeholder="|Имя">
+                                <input type="text" name="firstname" placeholder="|Имя">
                             </label>
                         </div>
                         <div class="adding-form-element">
@@ -40,17 +40,27 @@
                         </div>
                         <div class="adding-form-element">
                             <label>
-                                <input type="text" name="date of birth" placeholder="|Дата рожджения">
+                                <input type="date" name="birth_date" placeholder="|Дата рожджения">
                             </label>
                         </div>
                         <div class="adding-form-element">
                             <label>
-                                <input type="text" name="employee's role" placeholder="|Роль сотрудника">
+                                <input type="text" name="role_staff" placeholder="|Роль сотрудника">
                             </label>
                         </div>
                         <div class="adding-form-element">
                             <label>
-                                <input type="text" name="registration address" placeholder="|Адресс прописки">
+                                <input type="text" name="registration_address" placeholder="|Адресс прописки">
+                            </label>
+                        </div>
+                        <div class="adding-form-element">
+                            <label>
+                                <input type="text" name="login" placeholder="|Логин">
+                            </label>
+                        </div>
+                        <div class="adding-form-element">
+                            <label>
+                                <input type="password" name="password" placeholder="|Пароль">
                             </label>
                         </div>
                         <div class="adding-form-element-button">

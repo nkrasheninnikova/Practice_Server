@@ -15,6 +15,8 @@ class Staff extends Model
         'firstname',
         'patronymic',
         'login',
-        'password'
+        'password',
+        'registration_address',
+        'birth_date',
     ];
 }
