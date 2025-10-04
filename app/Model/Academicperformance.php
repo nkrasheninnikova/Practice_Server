@@ -14,6 +14,13 @@ class Academicperformance extends Model
         'discipline_id',
         'grade',
         'hours_spent',
-        'assessment_type'
+        'assessment_type',
+        'group_number',
+        'specialization',
+        'discipline',
+        'type_of_control',
+        'lastname',
+        'firstname',
+        'patronymic',
     ];
 }

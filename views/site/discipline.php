@@ -9,14 +9,20 @@
         <thead>
         <tr>
             <th>Id</th>
+            <th>Номер группы</th>
+            <th>Специальность</th>
             <th>Дисциплина</th>
+            <th>Общее количество часов</th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($disciplines as $discipline): ?>
             <tr>
-                <td><?= htmlspecialchars($discipline->discipline_id) ?></td>
+                <td><?= htmlspecialchars($discipline->disciplines_id) ?></td>
+                <td><?= htmlspecialchars($discipline->group_number) ?></td>
+                <td><?= htmlspecialchars($discipline->specialization) ?></td>
                 <td><?= htmlspecialchars($discipline->discipline) ?></td>
+                <td><?= htmlspecialchars($discipline->total_number_of_hours) ?></td>
             </tr>
         <?php endforeach; ?>
         </tbody>

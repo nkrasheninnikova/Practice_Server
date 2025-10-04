@@ -26,37 +26,41 @@
                     <form class="adding-student-form" method="post">
                         <div class="adding-student-form-element">
                             <label>
-                                <input type="text" name="surname" placeholder="|Фамилия">
+                                <input type="text" name="lastname" placeholder="|Фамилия" required>
                             </label>
                         </div>
                         <div class="adding-student-form-element">
                             <label>
-                                <input type="text" name="name" placeholder="|Имя">
+                                <input type="text" name="firstname" placeholder="|Имя" required>
                             </label>
                         </div>
                         <div class="adding-student-form-element">
                             <label>
-                                <input type="text" name="patronymic" placeholder="|Отчество">
+                                <input type="text" name="patronymic" placeholder="|Отчество" required>
+                            </label>
+                        </div>
+                        <div class="adding-student-form-element">
+                            <label>Пол<br>
+                                <select name="gender" required>
+                                    <option value="">Выберите пол</option>
+                                    <option value="М">Мужской</option>
+                                    <option value="Ж">Женский</option>
+                                </select>
                             </label>
                         </div>
                         <div class="adding-student-form-element">
                             <label>
-                                <input type="text" name="gender" placeholder="|Пол">
+                                <input type="text" name="group_number" placeholder="|Номер группы" required>
                             </label>
                         </div>
                         <div class="adding-student-form-element">
                             <label>
-                                <input type="text" name="group number" placeholder="|Номер группы">
+                                <input type="date" name="birth_date" placeholder="|Дата рожджения" required>
                             </label>
                         </div>
                         <div class="adding-student-form-element">
                             <label>
-                                <input type="text" name="date of birth" placeholder="|Дата рожджения">
-                            </label>
-                        </div>
-                        <div class="adding-student-form-element">
-                            <label>
-                                <input type="text" name="registration address" placeholder="|Адресс прописки">
+                                <input type="text" name="registration_address" placeholder="|Адресс прописки" required>
                             </label>
                         </div>
                         <div class="adding-student-form-element-button">

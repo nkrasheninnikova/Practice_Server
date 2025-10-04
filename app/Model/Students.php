@@ -21,6 +21,7 @@ class Students extends Model
         'birth_date',
         'registration_address',
         'course_number',
-        'group_id'
+        'group_id',
+        'group_number'
     ];
 }

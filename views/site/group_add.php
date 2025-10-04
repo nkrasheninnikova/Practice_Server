@@ -35,7 +35,7 @@
                         </div>
                         <div class="adding-group-form-element">
                             <label>
-                                <input type="text" name="year of admission" placeholder="|Год поступления">
+                                <input type="text" name="year_of_admission" placeholder="|Год поступления">
                             </label>
                         </div>
                         <div class="adding-group-form-element-button">

@@ -24,7 +24,7 @@
                     <form class="adding-discipline-form" method="post">
                         <div class="adding-discipline-form-element">
                             <label>
-                                <input type="text" name="group number" placeholder="|Номер группы">
+                                <input type="text" name="group_number" placeholder="|Номер группы">
                             </label>
                         </div>
                         <div class="adding-discipline-form-element">
@@ -39,7 +39,7 @@
                         </div>
                         <div class="adding-discipline-form-element">
                             <label>
-                                <input type="text" name="total number of hours" placeholder="|Общее количество часов">
+                                <input type="text" name="total_number_of_hours" placeholder="|Общее количество часов">
                             </label>
                         </div>
                         <div class="adding-discipline-form-element-button">

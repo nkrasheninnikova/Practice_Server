@@ -109,7 +109,29 @@ class Site
     {
         if ($request->method === 'POST') {
             $data = $request->all();
-            \Model\Students::create($data);
+
+            // Проверяем обязательные поля
+            if (
+                empty(trim($data['lastname'])) ||
+                empty(trim($data['firstname']))
+            ) {
+                return (new View())->render('site.student_add', [
+                    'message' => 'Фамилия, имя и группа обязательны',
+                    'old' => $data
+                ]);
+            }
+
+            \Model\Students::create([
+                'lastname'               => trim($data['lastname']),
+                'firstname'              => trim($data['firstname']),
+                'patronymic'             => trim($data['patronymic']) ?: null,
+                'gender'                 => $data['gender'],
+                'birth_date'             => $data['birth_date'] ?: null,
+                'registration_address'   => $data['registration_address'] ?: null,
+                'course_number'          => $data['course_number'] ?: null,
+                'group_id'               => $data['group_id'],
+                'group_number' => $data['group_number'] ?: null,
+            ]);
 
             app()->route->redirect('/student');
             exit;

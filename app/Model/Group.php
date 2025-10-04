@@ -12,6 +12,6 @@ class Group extends Model
     protected $fillable = [
         'group_number',
         'specialization',
-        'year of admission'
+        'year_of_admission'
     ];
 }

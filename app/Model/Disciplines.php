@@ -10,6 +10,9 @@ class Disciplines extends Model
     protected $primaryKey = 'disciplines_id';
     public $timestamps = false;
     protected $fillable = [
-        'discipline_name'
+        'discipline',
+        'group_number',
+        'specialization',
+        'total_number_of_hours'
     ];
 }

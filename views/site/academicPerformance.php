@@ -3,6 +3,7 @@
 <?php if (empty($academicPerformances)): ?>
     <p>Нет данных для отображения.</p>
 <?php else: ?>
+<a href="academicPerformance/add">Добавить</a>
     <table>
         <thead>
         <tr>
@@ -24,7 +25,7 @@
                 <td><?= htmlspecialchars($ap['firstname'] ?? '') ?></td>
                 <td><?= htmlspecialchars($ap['patronymic'] ?? '') ?></td>
                 <td><?= htmlspecialchars($ap['grade'] ?? '') ?></td>
-                <td><?= htmlspecialchars($ap['assessment_type'] ?? '') ?></td>
+                <td><?= htmlspecialchars($ap['type_of_control'] ?? '') ?></td>
             </tr>
         <?php endforeach; ?>
         </tbody>

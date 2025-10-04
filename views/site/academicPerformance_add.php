@@ -18,14 +18,32 @@
             <div class="adding-of-academic-performance-center">
                 <div class="adding-of-academic-performance-text">
                     <div class="adding-of-academic-performance-header">
-                        <a href="academicperformance.php">&larr;</a>
+                        <a href="academicPerformance.php">&larr;</a>
                         <p>Фиксация успеваемости</p>
                     </div>
 
                     <form class="adding-of-academic-performance-form" method="post">
                         <div class="adding-of-academic-perfomance-element">
                             <label>
-                                <input type="text" name="group number" placeholder="|Номер группы">
+                                <input type="text" name="group_number" placeholder="|Номер группы">
+                            </label>
+                        </div>
+
+                        <div class="adding-of-academic-perfomance-element">
+                            <label>
+                                <input type="text" name="lastname" placeholder="|Фамилия">
+                            </label>
+                        </div>
+
+                        <div class="adding-of-academic-perfomance-element">
+                            <label>
+                                <input type="text" name="firstname" placeholder="|Имя">
+                            </label>
+                        </div>
+
+                        <div class="adding-of-academic-perfomance-element">
+                            <label>
+                                <input type="text" name="patronymic" placeholder="|Отчество">
                             </label>
                         </div>
                         <div class="adding-of-academic-perfomance-element">
@@ -40,12 +58,12 @@
                         </div>
                         <div class="adding-of-academic-perfomance-element">
                             <label>
-                                <input type="text" name="estimation" placeholder="|Оценка">
+                                <input type="text" name="grade" placeholder="|Оценка">
                             </label>
                         </div>
                         <div class="adding-of-academic-perfomance-element">
                             <label>
-                                <input type="text" name="type of control" placeholder="|Вид контроля">
+                                <input type="text" name="type_of_control" placeholder="|Вид контроля">
                             </label>
                         </div>
                         <div class="adding-of-academic-perfomance-element-button">
