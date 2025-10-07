@@ -3,6 +3,9 @@
 <p>
     <a href="staff/add">Добавить</a>
 </p>
+<?php if (!empty($staffs)): ?>
+    <a href="staff/delete">Удалить по ID</a>
+<?php endif; ?>
 
 <?php if (empty($staffs)): ?>
     <p>Нет сотрудников для отображения.</p>

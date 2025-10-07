@@ -3,6 +3,9 @@
 <p>
     <a href="group/add">Добавить</a>
 </p>
+<?php if (!empty($groups)): ?>
+    <a href="group/delete">Удалить группу по ID</a>
+<?php endif; ?>
 
 <?php if (empty($groups)): ?>
     <p>Нет групп для отображения.</p>

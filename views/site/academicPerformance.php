@@ -1,5 +1,8 @@
 <h1>Фиксация успеваемости студентов</h1>
 
+<?php if (!empty($academicPerformances)): ?>
+    <a href="academicPerformance/delete">Удалить по ID</a>
+<?php endif; ?>
 <?php if (empty($academicPerformances)): ?>
     <p>Нет данных для отображения.</p>
 <?php else: ?>

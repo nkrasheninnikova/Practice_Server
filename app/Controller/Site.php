@@ -216,4 +216,93 @@ class Site
     {
         return new View('site.staff_edit', ['message' => 'hello working']);
     }
+    public function student_delete(Request $request): string
+    {
+        // GET — показываем форму удаления
+        if ($request->method !== 'POST') {
+            return (new View())->render('site.student_delete');
+        }
+
+        // POST — обрабатываем удаление
+        $id = (int)($_POST['student_id'] ?? 0);
+
+        if ($id > 0) {
+            $student = \Model\Students::find($id);
+            $student?->delete();
+        }
+
+        app()->route->redirect('/student');
+        exit;
+    }
+    public function staff_delete(Request $request): string
+    {
+        // GET — показываем форму удаления
+        if ($request->method !== 'POST') {
+            return (new View())->render('site.staff_delete');
+        }
+
+        // POST — обрабатываем удаление
+        $id = (int)($_POST['staff_id'] ?? 0);
+
+        if ($id > 0) {
+            $staff = \Model\Staff::find($id);
+            $staff?->delete();
+        }
+        app()->route->redirect('/staff');
+        exit;
+    }
+    public function group_delete(Request $request): string
+    {
+        // GET — показываем форму удаления
+        if ($request->method !== 'POST') {
+            return (new View())->render('site.group_delete');
+        }
+
+        // POST — обрабатываем удаление
+        $id = (int)($_POST['group_id'] ?? 0);
+
+        if ($id > 0) {
+            $group = \Model\Group::find($id);
+            $group?->delete();
+        }
+
+        app()->route->redirect('/group');
+        exit;
+    }
+    public function discipline_delete(Request $request): string
+    {
+        // GET — показываем форму удаления
+        if ($request->method !== 'POST') {
+            return (new View())->render('site.discipline_delete');
+        }
+
+        // POST — обрабатываем удаление
+        $id = (int)($_POST['discipline_id'] ?? 0);
+
+        if ($id > 0) {
+            $discipline = \Model\Disciplines::find($id);
+            $discipline?->delete();
+        }
+
+        app()->route->redirect('/discipline');
+        exit;
+    }
+    public function academicPerformance_delete(Request $request): string
+    {
+        // GET — показываем форму удаления
+        if ($request->method !== 'POST') {
+            return (new View())->render('site.academicPerformance_delete');
+        }
+
+        // POST — обрабатываем удаление
+        $id = (int)($_POST['performance_id'] ?? 0);
+
+        if ($id > 0) {
+            $discipline = \Model\Academicperformance::find($id);
+            $discipline?->delete();
+        }
+
+        app()->route->redirect('/academicPerformance');
+        exit;
+    }
 }

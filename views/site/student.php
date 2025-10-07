@@ -1,4 +1,7 @@
 <h1>Список студентов</h1>
+<?php if (!empty($students)): ?>
+    <a href="student/delete">Удалить по ID</a>
+<?php endif; ?>
 <?php if (empty($students)): ?>
     <p>Нет студентов для отображения.</p>
 <?php else: ?>
