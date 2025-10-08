@@ -4,6 +4,14 @@
     <a href="staff/add">Добавить</a>
 </p>
 <?php if (!empty($staffs)): ?>
+    <form method="GET" action="/practice_server/staff/edit">
+        <label>
+            Введите ID сотрудника для редактирования:
+            <input type="number" name="staff_id" min="1" required>
+        </label>
+        <button type="submit">Перейти к редактированию</button>
+    </form>
+
     <a href="staff/delete">Удалить по ID</a>
 <?php endif; ?>
 

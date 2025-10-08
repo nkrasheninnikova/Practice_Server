@@ -1,5 +1,13 @@
 <h1>Список студентов</h1>
 <?php if (!empty($students)): ?>
+    <form method="GET" action="/practice_server/student/edit">
+        <label>
+            Введите ID студента для редактирования:
+            <input type="number" name="student_id" min="1" required>
+        </label>
+        <button type="submit">Перейти к редактированию</button>
+    </form>
+
     <a href="student/delete">Удалить по ID</a>
 <?php endif; ?>
 <?php if (empty($students)): ?>

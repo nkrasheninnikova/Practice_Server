@@ -1,7 +1,13 @@
 <h1>Фиксация успеваемости студентов</h1>
-
 <?php if (!empty($academicPerformances)): ?>
-    <a href="academicPerformance/delete">Удалить по ID</a>
+    <form method="GET" action="/practice_server/academicPerformance/edit">
+        <label>
+            Введите ID успеваемости для редактирования:
+            <input type="number" name="performance_id" min="1" required>
+        </label>
+        <button type="submit">Перейти к редактированию</button>
+        <a href="academicPerformance/delete">Удалить по ID</a>
+    </form>
 <?php endif; ?>
 <?php if (empty($academicPerformances)): ?>
     <p>Нет данных для отображения.</p>

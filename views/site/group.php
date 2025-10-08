@@ -4,7 +4,15 @@
     <a href="group/add">Добавить</a>
 </p>
 <?php if (!empty($groups)): ?>
-    <a href="group/delete">Удалить группу по ID</a>
+    <form method="GET" action="/practice_server/group/edit">
+        <label>
+            Введите ID группы для редактирования:
+            <input type="number" name="group_id" min="1" required>
+        </label>
+        <button type="submit">Перейти к редактированию</button>
+    </form>
+
+    <a href="group/delete">Удалить по ID</a>
 <?php endif; ?>
 
 <?php if (empty($groups)): ?>

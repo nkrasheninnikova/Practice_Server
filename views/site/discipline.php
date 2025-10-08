@@ -1,10 +1,21 @@
 <h1>Список дисциплин</h1>
+
 <p>
     <a href="discipline/add">Добавить</a>
 </p>
+
 <?php if (!empty($disciplines)): ?>
+    <form method="GET" action="/practice_server/discipline/edit">
+        <label>
+            Введите ID дисциплины для редактирования:
+            <input type="number" name="discipline_id" min="1" required>
+        </label>
+        <button type="submit">Перейти к редактированию</button>
+    </form>
+
     <a href="discipline/delete">Удалить по ID</a>
 <?php endif; ?>
+
 <?php if (empty($disciplines)): ?>
     <p>Нет дисциплин для отображения.</p>
 <?php else: ?>
