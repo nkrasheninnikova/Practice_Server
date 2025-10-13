@@ -14,16 +14,9 @@ class User extends Model implements IdentityInterface
     protected $fillable = [
         'name',
         'login',
-        'password'
+        'password',
+        'role'
     ];
-
-    protected static function booted()
-    {
-        static::created(function ($user) {
-            $user->password = md5($user->password);
-            $user->save();
-        });
-    }
 
     //Выборка пользователя по первичному ключу
     public function findIdentity(int $id)
@@ -34,7 +27,7 @@ class User extends Model implements IdentityInterface
     //Возврат первичного ключа
     public function getId(): int
     {
-        return $this->id;
+        return $this->Id;
     }
 
     //Возврат аутентифицированного пользователя
@@ -43,4 +36,14 @@ class User extends Model implements IdentityInterface
         return self::where(['login' => $credentials['login'],
             'password' => md5($credentials['password'])])->first();
     }
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isStaff(): bool
+    {
+        return $this->role === 'staff';
+    }
+
 }

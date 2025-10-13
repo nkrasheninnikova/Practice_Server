@@ -12,38 +12,67 @@ body{
 }
 
 /*Главная страница*/
-.header{
+.header {
     width: 1920px;
     height: 140px;
     background-color: #F5F5F5;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-.logo-menu{
+
+.logo-menu {
     margin: 0 auto;
     width: 85%;
     height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.logo{
+
+.logo {
     width: 400px;
     height: 100%;
     background-color: #D9D9D9;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family:'Inter-Regular';
+    font-family: 'Inter-Regular';
     font-size: 32px;
 }
-.account{
-    width: 260px;
-    height: 100%;
+
+.nav-and-account {
     display: flex;
-    justify-content: center;
+    align-items: center;
+}
+
+.role-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.role-nav a {
+    color: #333;
+    text-decoration: none;
+    font-family: 'Inter-Regular';
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.role-nav a:hover {
+    background-color: #e0e0e0;
+}
+
+.account {
+    display: flex;
     align-items: center;
     font-family: 'Inter-Regular';
     font-size: 20px;
+    color: #333;
+}
+
+.account a {
+    text-decoration: none;
 }
 
 /*Первая секция*/

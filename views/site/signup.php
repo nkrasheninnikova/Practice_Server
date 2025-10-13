@@ -46,7 +46,7 @@
                             <label><p>Пароль</p> <input type="text" name="password"  placeholder="|Введите ваш пароль" ></label>
                         </div>
                         <div class="authorization-form-button">
-                            <button>Зарегистрироваться</button>
+                            <button>Войти</button>
                         </div>
                     </form>
                 </div>
