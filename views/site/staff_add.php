@@ -23,6 +23,7 @@
                     </div>
 
                     <form class="adding-form" method="post">
+                        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
                         <div class="adding-form-element">
                             <label>
                                 <input type="text" name="lastname" placeholder="|Фамилия">

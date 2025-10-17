@@ -23,6 +23,7 @@
                     </div>
 
                     <form class="adding-group-form" method="post">
+                        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
                         <div class="adding-group-form-element">
                             <label>
                                 <input type="text" name="group number" placeholder="|Номер группы">
@@ -67,4 +68,3 @@
 </div>
 </body>
 </html>
-

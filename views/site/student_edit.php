@@ -5,6 +5,7 @@
 <?php else: ?>
     <h1>Редактировать группу</h1>
     <form method="POST" action="/practice_server/student/edit">
+        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
         <input type="hidden" name="student_id" value="<?= htmlspecialchars($student->student_id) ?>">
 
         <label>Фамилия:</label>

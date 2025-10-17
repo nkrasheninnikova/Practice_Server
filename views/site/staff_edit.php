@@ -6,6 +6,7 @@
     <h1>Редактировать сотрудника</h1>
     <form method="POST" action="/practice_server/staff/edit">
         <input type="hidden" name="staff_id" value="<?= htmlspecialchars($staff->staff_id) ?>">
+        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
 
         <label>Фамилия:</label>
         <input type="text" name="lastname" value="<?= htmlspecialchars($staff->lastname ?? '') ?>" required><br><br>

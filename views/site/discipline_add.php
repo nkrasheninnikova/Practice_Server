@@ -22,6 +22,7 @@
                         <p>Добавление дисциплины</p>
                     </div>
                     <form class="adding-discipline-form" method="post">
+                        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
                         <div class="adding-discipline-form-element">
                             <label>
                                 <input type="text" name="group_number" placeholder="|Номер группы">

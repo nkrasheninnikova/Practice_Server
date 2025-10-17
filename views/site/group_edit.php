@@ -5,6 +5,7 @@
 <?php else: ?>
     <h1>Редактировать группу</h1>
     <form method="POST" action="/practice_server/group/edit">
+        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
         <input type="hidden" name="group_id" value="<?= htmlspecialchars($group->group_id) ?>">
 
         <label>Номер группы:</label>

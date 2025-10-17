@@ -24,6 +24,7 @@
                     </div>
 
                     <form class="adding-student-form" method="post">
+                        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
                         <div class="adding-student-form-element">
                             <label>
                                 <input type="text" name="lastname" placeholder="|Фамилия" required>

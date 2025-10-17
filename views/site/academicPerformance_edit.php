@@ -6,6 +6,7 @@
     <h1>Редактировать успеваемость</h1>
 
     <form method="POST" action="/practice_server/academicPerformance/edit">
+        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
         <input type="hidden" name="performance_id" value="<?= htmlspecialchars($academicPerformance->performance_id) ?>">
 
         <label>Группа:</label>

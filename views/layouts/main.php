@@ -22,6 +22,7 @@
                             <a href="<?= app()->route->getUrl('/group') ?>">Группы</a>
                             <a href="<?= app()->route->getUrl('/student') ?>">Студенты</a>
                             <a href="<?= app()->route->getUrl('/discipline') ?>">Дисциплины</a>
+                            <a href="<?= app()->route->getUrl('/academicPerformance') ?>">Фиксация успеваемости студентов</a>
                         <?php elseif ($user->isAdmin()): ?>
                             <a href="<?= app()->route->getUrl('/staff') ?>">Сотрудники</a>
                             <a href="<?= app()->route->getUrl('/discipline') ?>">Дисциплины</a>

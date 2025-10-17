@@ -23,6 +23,7 @@
                     </div>
 
                     <form class="adding-of-academic-performance-form" method="post">
+                        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
                         <div class="adding-of-academic-perfomance-element">
                             <label>
                                 <input type="text" name="group_number" placeholder="|Номер группы">

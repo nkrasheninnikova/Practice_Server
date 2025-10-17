@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход в систему</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
 <div class="wrapper">
-    <header>
-        <div class="header">
-            <div class="logo">Logo</div>
-        </div>
-    </header>
-
     <main>
         <section class="authorization-logo-block">
             <div class="authorization-logo-center">

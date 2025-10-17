@@ -629,77 +629,6 @@ body{
 }
 
 /*Добавление группы*/
-.adding-group-form-block{
-    margin-top: 150px;
-}
-.adding-group-form-center{
-    width: 1100px;
-    height: 700px;
-    margin: 0 auto;
-    background-color: #F5F5F5;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.adding-group-form-text{
-    width: 910px;
-    height: 530px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 90px;
-}
-.adding-group-form-header{
-    width: 660px;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    font-family:'Lobster-Regular';
-    font-size: 40px;
-}
-.adding-group-form{
-    width: 820px;
-    height: 380px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-.adding-group-form-element{
-    width: 820px;
-    height: 80px;
-}
-.adding-group-form-element input{
-    width: 100%;
-    height: 80px;
-    background-color: #FFEBCD;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-}
-.adding-group-form-element input::placeholder{
-    padding-left: 20px;
-    font-family:'Inter-Regular';
-    font-size: 20px;
-    color: #7B7B7B;
-}
-.adding-group-form-element-button{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.adding-group-form-element-button button{
-    width: 260px;
-    height: 50px;
-    background-color: #FFEBCD;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    font-family:'Inter-Regular';
-    font-size: 20px;
-}
-
-/*Добавление группы*/
 .adding-discipline-form-block{
     margin-top: 150px;
 }
@@ -914,3 +843,4 @@ body{
     font-family:'Inter-Regular';
     font-size: 20px;
 }
+

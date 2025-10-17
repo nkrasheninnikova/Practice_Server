@@ -5,6 +5,7 @@
 <?php else: ?>
     <h1>Редактировать дисциплину</h1>
     <form method="POST" action="/practice_server/discipline/edit">
+        <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
         <input type="hidden" name="discipline_id" value="<?= htmlspecialchars($discipline->disciplines_id) ?>">
 
         <label>Название дисциплины:</label>

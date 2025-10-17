@@ -43,4 +43,106 @@
     </tbody>
 </table>
 <?php endif; ?>
+<style>
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    p {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    p a,
+    a[href="student/delete"] {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin: 0 6px;
+    }
+
+    p a:hover,
+    a[href="student/delete"]:hover {
+        background-color: #0056b3;
+    }
+
+    a[href="student/add"] {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin: 10px 0 20px;
+    }
+
+    a[href="student/add"]:hover {
+        background-color: #218838;
+    }
+
+    form {
+        text-align: center;
+        margin: 20px auto;
+        max-width: 400px;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    form input[type="number"] {
+        padding: 6px;
+        font-size: 16px;
+        width: 120px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    form button {
+        margin-top: 10px;
+        padding: 6px 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    form button:hover {
+        background-color: #0056b3;
+    }
+
+    table {
+        width: 100%;
+        max-width: 900px;
+        margin: 20px auto;
+        border-collapse: collapse;
+        font-size: 15px;
+        background: white;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    table th,
+    table td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #f8f9fa;
+        color: #333;
+    }
+</style>
 
