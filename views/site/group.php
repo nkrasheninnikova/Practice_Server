@@ -1,11 +1,9 @@
 <h1>Список групп</h1>
 <form method="GET" action="">
-    <label>
-        Поиск группы:
-        <input type="text" name="group_number" value="<?= htmlspecialchars($_GET['group_number'] ?? '') ?>"
-               placeholder="Поиск группы">
-    </label>
-    <button type="submit">Найти</button>
+    <?php
+    $searchName = 'group_number';
+    $placeholder = 'Поиск группы...';
+    include __DIR__ . '/../../vendor/nkrasheninnikova/mycollect/src/search-form.php'; ?>
     <?php if (!empty($_GET['group_number'])): ?>
         <a href="?">Сбросить</a>
     <?php endif; ?>

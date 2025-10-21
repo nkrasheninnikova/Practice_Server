@@ -22,7 +22,7 @@
                         <p>Добавление сотрудника</p>
                     </div>
 
-                    <form class="adding-form" method="post">
+                    <form class="adding-form" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="csrf_token" value="<?= \Src\Auth\Auth::generateCSRF() ?>">
                         <div class="adding-form-element">
                             <label>
@@ -46,12 +46,12 @@
                         </div>
                         <div class="adding-form-element">
                             <label>
-                                <input type="text" name="role_staff" placeholder="|Роль сотрудника">
+                                <input type="text" name="role_staff" placeholder="|Роль сотрудника" required>
                             </label>
                         </div>
                         <div class="adding-form-element">
                             <label>
-                                <input type="text" name="registration_address" placeholder="|Адресс прописки">
+                                <input type="text" name="registration_address" placeholder="|Адресс прописки" required>
                             </label>
                         </div>
                         <div class="adding-form-element">

@@ -14,9 +14,6 @@ use Src\Auth\Auth;
 use Model\Disciplines;
 use Model\Academicperformance;
 use Src\Validator\Validator;
-use Src\Validator\Rules\RequireddValidator;
-use Src\Validator\Rules\NumericValidator;
-use Src\Validator\Rules\InValidator;
 
 
 class Site
@@ -283,7 +280,6 @@ class Site
         // На всякий случай — если ни GET, ни POST
         return new View('site.staff_add');
     }
-
 
     public function student_delete(Request $request): string
     {
