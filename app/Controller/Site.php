@@ -14,6 +14,9 @@ use Src\Auth\Auth;
 use Model\Disciplines;
 use Model\Academicperformance;
 use Src\Validator\Validator;
+use Src\Validator\Rules\RequireddValidator;
+use Src\Validator\Rules\NumericValidator;
+use Src\Validator\Rules\InValidator;
 
 
 class Site
@@ -79,83 +82,124 @@ class Site
     public function student(Request $request): string
     {
         if ($request->method !== 'GET') {
-            return new View('site.student');
+            return (new View())->render('site.student', ['students' => []]);
         }
 
-        $students = Students::all();
+        // Получаем фамилию из GET-параметра
+        $lastname = $_GET['lastname'] ?? '';
+        $lastname = trim($lastname);
+
+        // Загружаем студентов: всех или по фамилии
+        if ($lastname !== '') {
+            $students = Students::where('lastname', 'LIKE', "%{$lastname}%")->get();
+        } else {
+            $students = Students::all();
+        }
 
         return (new View())->render('site.student', [
-            'students' => $students
+            'students' => $students,
+            'request' => $request
         ]);
     }
 
     public function academicPerformance(Request $request): string
     {
-        //Если просто обращение к странице, то отобразить форму
         if ($request->method !== 'GET') {
-            return new View('site.academicPerformance');
+            return (new View())->render('site.academicPerformance', [
+                'academicPerformances' => []
+            ]);
         }
-        $academicPerformances = academicPerformance::all();
+
+        // Получаем номер группы из GET-параметра
+        $groupNumber = $_GET['group_number'] ?? '';
+        $groupNumber = trim($groupNumber);
+
+        // Загружаем успеваемость: все записи или только по группе
+        if ($groupNumber !== '') {
+            $academicPerformances = AcademicPerformance::where('group_number', 'LIKE', "%{$groupNumber}%")->get();
+        } else {
+            $academicPerformances = AcademicPerformance::all();
+        }
 
         return (new View())->render('site.academicPerformance', [
-            'academicPerformances' => $academicPerformances
+            'academicPerformances' => $academicPerformances,
+            'request' => $request
         ]);
     }
-
     public function group(Request $request): string
     {
-        //Если просто обращение к странице, то отобразить форму
         if ($request->method !== 'GET') {
-            return new View('site.group');
+            return (new View())->render('site.group', ['groups' => []]);
         }
-        // Загружаем все группы
-        $groups = Group::all();
 
-        // Передаём в шаблон как одну переменную
+        // Получаем название/номер группы из GET-параметра
+        $groupQuery = $_GET['group_number'] ?? '';
+        $groupQuery = trim($groupQuery);
+
+        // Загружаем группы: все или по частичному совпадению
+        if ($groupQuery !== '') {
+            $groups = Group::where('group_number', 'LIKE', "%{$groupQuery}%")->get();
+        } else {
+            $groups = Group::all();
+        }
+
         return (new View())->render('site.group', [
-            'groups' => $groups
+            'groups' => $groups,
+            'request' => $request
         ]);
     }
-
     public function discipline(Request $request): string
     {
-        //Если просто обращение к странице, то отобразить форму
         if ($request->method !== 'GET') {
-            return new View('site.discipline');
+            return (new View())->render('site.discipline', ['disciplines' => []]);
         }
-        // Загружаем все дисциплины из БД
-        $disciplines = Disciplines::all();
 
-        return (new View())->render('site.discipline', ['disciplines' => $disciplines]);
+        // Получаем название дисциплины из GET-параметра
+        $search = $_GET['discipline'] ?? '';
+        $search = trim($search);
+
+        // Загружаем дисциплины: все или по частичному совпадению
+        if ($search !== '') {
+            $disciplines = Disciplines::where('discipline', 'LIKE', "%{$search}%")->get();
+        } else {
+            $disciplines = Disciplines::all();
+        }
+
+        return (new View())->render('site.discipline', [
+            'disciplines' => $disciplines,
+            'request' => $request
+        ]);
     }
-
     public function staff(Request $request): string
     {
-        //Если просто обращение к странице, то отобразить форму
+        // Разрешаем только GET-запросы
         if ($request->method !== 'GET') {
-            return new View('site.staff');
+            return (new View())->render('site.staff', ['staffs' => []]);
         }
-        // Загружаем все дисциплины из БД
-        $staffs = Staff::all();
 
-        return (new View())->render('site.staff', ['staffs' => $staffs]);
+        // Получаем фамилию из глобального массива $_GET
+        $lastname = $_GET['lastname'] ?? '';
+
+        // Убираем лишние пробелы и проверяем, не пустая ли строка
+        $lastname = trim($lastname);
+
+        // Загружаем сотрудников
+        if ($lastname !== '') {
+            $staffs = Staff::where('lastname', 'LIKE', "%{$lastname}%")->get();
+        } else {
+            $staffs = Staff::all();
+        }
+
+        return (new View())->render('site.staff', [
+            'staffs' => $staffs,
+            'request' => $request
+        ]);
     }
 
     public function student_add(Request $request): string
     {
         if ($request->method === 'POST') {
             $data = $request->all();
-
-            // Проверяем обязательные поля
-            if (
-                empty(trim($data['lastname'])) ||
-                empty(trim($data['firstname']))
-            ) {
-                return (new View())->render('site.student_add', [
-                    'message' => 'Фамилия, имя и группа обязательны',
-                    'old' => $data
-                ]);
-            }
 
             \Model\Students::create([
                 'lastname' => trim($data['lastname']),

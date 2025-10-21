@@ -9,10 +9,10 @@ return [
         'auth' => \Middlewares\AuthMiddleware::class,
         'role' => \Middlewares\RoleMiddleware::class,
     ],
-    'validators' => [
-        'required' => \Validators\RequireValidator::class,
-        'unique' => \Validators\UniqueValidator::class
-    ],
+        'validators' => [
+            'required' => \Validators\RequireValidator::class,
+            'unique'   => \Validators\UniqueValidator::class,
+        ],
     'routeAppMiddleware' => [
         'csrf' => \Middlewares\CSRFMiddleware::class,
         'trim' => \Middlewares\TrimMiddleware::class,

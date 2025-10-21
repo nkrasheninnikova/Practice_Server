@@ -1,4 +1,16 @@
 <h1>Список групп</h1>
+<form method="GET" action="">
+    <label>
+        Поиск группы:
+        <input type="text" name="group_number" value="<?= htmlspecialchars($_GET['group_number'] ?? '') ?>"
+               placeholder="Поиск группы">
+    </label>
+    <button type="submit">Найти</button>
+    <?php if (!empty($_GET['group_number'])): ?>
+        <a href="?">Сбросить</a>
+    <?php endif; ?>
+</form>
+
 <?php if (!empty($groups)): ?>
     <form method="GET" action="/practice_server/group/edit">
         <label>

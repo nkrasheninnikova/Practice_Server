@@ -4,15 +4,15 @@ namespace Src\Validator;
 
 class Validator
 {
-    //Разрешенные валидаторы
+    // Разрешенные валидаторы
     private array $validators = [];
-    //Итоговые ошибки
+    // Итоговые ошибки
     private array $errors = [];
-    //Проверяемые поля
+    // Проверяемые поля (данные из формы)
     private array $fields = [];
-    //Массив правил
+    // Массив правил валидации
     private array $rules = [];
-    //Кастомные сообщения
+    // Кастомные сообщения об ошибках
     private array $messages = [];
 
     public function __construct(array $fields, array $rules, array $messages = [])
@@ -24,8 +24,7 @@ class Validator
         $this->validate();
     }
 
-    //Перебираем список всех валидируемых полей и для
-    //каждого поля вызываем метод validateField()
+    // Перебираем список всех валидируемых полей и для каждого поля вызываем validateField()
     private function validate(): void
     {
         foreach ($this->rules as $fieldName => $fieldValidators) {
@@ -33,44 +32,54 @@ class Validator
         }
     }
 
-    //Валидация отдельного поля
+    // Валидация отдельного поля
     private function validateField(string $fieldName, array $fieldValidators): void
     {
-        //Перебираем все валидаторы, ассоциированные с полем
+        // Перебираем все валидаторы, ассоциированные с полем
         foreach ($fieldValidators as $validatorName) {
-            //Отделяем от имени валидатора дополнительные аргументы
+            // Отделяем от имени валидатора дополнительные аргументы (например: 'in:М,Ж')
             $tmp = explode(':', $validatorName);
-            [$validatorName, $args] = count($tmp) > 1 ? $tmp : [$validatorName, null];
+            [$validatorName, $args] = count($tmp) > 1 ? [$tmp[0], $tmp[1]] : [$validatorName, null];
             $args = isset($args) ? explode(',', $args) : [];
 
-            //Соотносим имя валидатора с классом в массиве разрешенных валидаторов
+            // Проверяем, зарегистрирован ли такой валидатор
+            if (!isset($this->validators[$validatorName])) {
+                continue;
+            }
+
             $validatorClass = $this->validators[$validatorName];
             if (!class_exists($validatorClass)) {
                 continue;
             }
-            //Создаем объект валидатора, передаем туда параметры
+
+            // Безопасно получаем значение поля и сообщение
+            $fieldValue = $this->fields[$fieldName] ?? null;
+            $message = $this->messages[$validatorName] ?? null;
+
+            // Создаем объект валидатора
             $validator = new $validatorClass(
                 $fieldName,
-                $this->fields[$fieldName],
+                $fieldValue,
                 $args,
-                $this->messages[$validatorName]);
+                $message
+            );
 
-            //Если валидация не прошла, то добавляем ошибку в общий массив ошибок
+            // Если валидация не прошла — добавляем ошибку
             if (!$validator->rule()) {
                 $this->errors[$fieldName][] = $validator->validate();
             }
         }
     }
 
-    //Возврат массива найденных ошибок
+    // Возврат массива найденных ошибок
     public function errors(): array
     {
         return $this->errors;
     }
 
-    //Признак успешной валидации
+    // Признак неуспешной валидации (true = есть ошибки)
     public function fails(): bool
     {
-        return (bool)count($this->errors);
+        return !empty($this->errors);
     }
 }

@@ -1,4 +1,15 @@
 <h1>Фиксация успеваемости студентов</h1>
+<form method="GET" action="">
+    <label>
+        Поиск группы:
+        <input type="text" name="group_number" value="<?= htmlspecialchars($_GET['group_number'] ?? '') ?>"
+               placeholder="Поиск группы">
+    </label>
+    <button type="submit">Найти</button>
+    <?php if (!empty($_GET['group_number'])): ?>
+        <a href="?">Сбросить</a>
+    <?php endif; ?>
+</form>
 <link rel="stylesheet" href="css/style.css">
 <?php if (!empty($academicPerformances)): ?>
     <form method="GET" action="/practice_server/academicPerformance/edit">

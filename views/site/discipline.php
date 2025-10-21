@@ -1,4 +1,14 @@
 <h1>Список дисциплин</h1>
+<form method="GET">
+    <label>
+        Поиск по названию дисциплины:
+        <input type="text" name="discipline" value="<?= htmlspecialchars($_GET['discipline'] ?? '') ?>">
+    </label>
+    <button type="submit">Найти</button>
+    <?php if (!empty($_GET['discipline'])): ?>
+        <a href="?">Сбросить</a>
+    <?php endif; ?>
+</form>
 <?php if (!empty($disciplines)): ?>
     <form method="GET" action="/practice_server/discipline/edit">
         <label>

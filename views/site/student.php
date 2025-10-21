@@ -1,4 +1,15 @@
 <h1>Список студентов</h1>
+<form method="GET" action="">
+    <label>
+        Поиск по фамилии:
+        <input type="text" name="lastname" value="<?= htmlspecialchars($_GET['lastname'] ?? '') ?>"
+               placeholder="Поиск по фамилии">
+    </label>
+    <button type="submit">Найти</button>
+    <?php if (!empty($_GET['lastname'])): ?>
+        <a href="?">Сбросить</a>
+    <?php endif; ?>
+</form>
 <?php if (!empty($students)): ?>
     <form method="GET" action="/practice_server/student/edit">
         <label>
