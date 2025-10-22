@@ -32,8 +32,7 @@
 
                 <div class="account">
                     <?php if (!app()->auth::check()): ?>
-                        <a href="<?= app()->route->getUrl('/login') ?>">Вход</a> /
-                        <a href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
+                        <a href="<?= app()->route->getUrl('/login') ?>">Вход в личный кабинет</a>
                     <?php else: ?>
                         <a href="<?= app()->route->getUrl('/logout') ?>">
                             Выход (<?= htmlspecialchars($user->name ?? '') ?>)

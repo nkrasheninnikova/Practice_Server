@@ -18,7 +18,7 @@
             <div class="adding-of-academic-performance-center">
                 <div class="adding-of-academic-performance-text">
                     <div class="adding-of-academic-performance-header">
-                        <a href="academicPerformance.php">&larr;</a>
+                        <a href="/practice_server/academicPerformance">&larr;</a>
                         <p>Фиксация успеваемости</p>
                     </div>
 

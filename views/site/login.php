@@ -30,7 +30,7 @@
             <div class="authorization-form-center">
                 <div class="authorization-form-block-text">
                     <div class="authorization-form-header">
-                        <a href="<?= app()->route->getUrl('/hello') ?>">&larr;</a>
+                        <a href="<?= app()->route->getUrl('/') ?>">&larr;</a>
                         <p>Вход в личный кабинет</p>
                     </div>
                     <?php if (!empty($message)): ?>

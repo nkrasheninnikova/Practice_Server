@@ -29,6 +29,10 @@ class Site
     {
         return new View('site.hello', ['message' => 'hello working']);
     }
+    public function hello_guest(): string
+    {
+        return new View('site.hello', ['message' => 'hello working']);
+    }
 
     public function signup(Request $request): string
     {
@@ -129,11 +133,11 @@ class Site
             return (new View())->render('site.group', ['groups' => []]);
         }
 
-        // Получаем название/номер группы из GET-параметра
+        // Получаем номер группы из GET-параметра
         $groupQuery = $_GET['group_number'] ?? '';
         $groupQuery = trim($groupQuery);
 
-        // Загружаем группы: все или по частичному совпадению
+        // Загружаем группы: все или по совпадению
         if ($groupQuery !== '') {
             $groups = Group::where('group_number', 'LIKE', "%{$groupQuery}%")->get();
         } else {
@@ -155,7 +159,7 @@ class Site
         $search = $_GET['discipline'] ?? '';
         $search = trim($search);
 
-        // Загружаем дисциплины: все или по частичному совпадению
+        // Загружаем дисциплины: все или по совпадению
         if ($search !== '') {
             $disciplines = Disciplines::where('discipline', 'LIKE', "%{$search}%")->get();
         } else {
@@ -174,7 +178,7 @@ class Site
             return (new View())->render('site.staff', ['staffs' => []]);
         }
 
-        // Получаем фамилию из глобального массива $_GET
+        // Получаем фамилию из массива $_GET
         $lastname = $_GET['lastname'] ?? '';
 
         // Убираем лишние пробелы и проверяем, не пустая ли строка

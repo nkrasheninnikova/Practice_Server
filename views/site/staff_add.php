@@ -18,7 +18,7 @@
             <div class="adding-form-center">
                 <div class="adding-form-block-text">
                     <div class="adding-form-header">
-                        <a href="">&larr;</a>
+                        <a href="/practice_server/staff">&larr;</a>
                         <p>Добавление сотрудника</p>
                     </div>
 

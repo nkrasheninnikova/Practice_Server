@@ -18,7 +18,7 @@
             <div class="adding-discipline-form-center">
                 <div class="adding-discipline-form-text">
                     <div class="adding-discipline-form-header">
-                        <a href="discipline.php">&larr;</a>
+                        <a href="/practice_server/discipline">&larr;</a>
                         <p>Добавление дисциплины</p>
                     </div>
                     <form class="adding-discipline-form" method="post">
